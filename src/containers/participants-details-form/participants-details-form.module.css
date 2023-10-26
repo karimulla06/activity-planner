@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.inputs_container {
+  width: 350px;
+  text-align: start;
+}
+
+.submit_btn {
+  margin-top: 20px;
+}
+
+.submit_btn button {
+  width: 100%;
+}
