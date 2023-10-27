@@ -1,16 +1,23 @@
 import styles from "./participants-list.module.css";
 
-const ParticipantsList = ({ data = [], title, handleClose }) => {
+const ParticipantsList = ({ data, title, handleDelete, testId }) => {
   return (
     <div className={styles.container}>
-      {title && <span className={styles.title}>{title}</span>}
+      {title && (
+        <span className={styles.title} data-testid={testId + "-title"}>
+          {title}
+        </span>
+      )}
       <div className={styles.list_container}>
-        {data.map((participant) => (
+        {data?.map((participant, index) => (
           <div key={participant} className={styles.participant_container}>
-            <span>{participant}</span>
+            <span data-testid={`${testId}-participant-${index + 1}-name`}>
+              {participant}
+            </span>
             <span
               className={styles.btn}
-              onClick={() => handleClose(participant)}
+              onClick={() => handleDelete(participant)}
+              data-testid={`${testId}-participant-${index + 1}-delete-button`}
             >
               x
             </span>

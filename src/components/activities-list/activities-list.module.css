@@ -12,23 +12,24 @@
 .conatiner ul {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 10px;
 }
 .conatiner li {
   font-weight: 400;
+  text-align: start;
 }
 
-.loading_div {
+.loading {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.loading div {
   width: 100%;
   height: 10px;
   margin: 5px 0;
   border-radius: 5px;
   opacity: 0.5;
-}
-.w50 {
-  width: 50%;
-}
-.w80 {
-  width: 80%;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styled-button.module.css";
 
-const StyledButton = ({ label, onClick, disabled, type }) => {
+const StyledButton = ({ testId, label, onClick, disabled, type }) => {
   return (
     <button
       onClick={onClick}
@@ -9,6 +9,7 @@ const StyledButton = ({ label, onClick, disabled, type }) => {
       className={`${styles.btn} ${
         type === "outlined" ? styles.btn_outlined : ""
       }`}
+      data-testid={testId}
     >
       {label}
     </button>

@@ -3,6 +3,7 @@ export const generateArray = (n) => Array.from({ length: n }, (_, i) => i + 1);
 
 // Regular expression for alphabets and spaces
 const nameRegex = /^[a-zA-Z ]*$/;
+
 // Check for duplicate name
 const isDuplicate = (name, key, details) =>
   Object.values(details).some(

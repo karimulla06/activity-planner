@@ -2,16 +2,21 @@
   display: grid;
   gap: 10px;
   grid-template-columns: 1fr 1px 3fr;
-  width: 700px;
+  width: 750px;
+}
+/* medium screens */
+@media screen and (max-width: 750px) {
+  .container {
+    width: 100%;
+  }
+}
+/* small screens */
+@media screen and (max-width: 400px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
 }
 
 .horizontal_divider {
   background-color: black;
-}
-
-@media screen and (max-width: 400px) {
-  .container {
-    grid-template-columns: 1fr;
-    width: 100%;
-  }
 }

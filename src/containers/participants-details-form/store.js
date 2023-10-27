@@ -6,12 +6,9 @@ export const ACTIONS = {
 };
 
 export function reducer(state, action) {
-  const {
-    type,
-    payload: { key, name },
-  } = action;
-  switch (type) {
+  switch (action.type) {
     case ACTIONS.UPDATE_NAME: {
+      const { key, name } = action.payload;
       const error = validateInput(name, key, state.participantsDetails);
       const updatedDetails = {
         ...state.participantsDetails,

@@ -13,18 +13,21 @@ const Activities = ({ participants, setParticipants }) => {
   const [fetchAgain, setFetchAgain] = useState(false);
 
   useEffect(() => {
-    setIsLoading(true);
-    getActivities(participants.length)
-      .then((a) => {
-        setActivities(a);
-        setIsLoading(false);
-      })
-      .catch((e) => {
+    const fetchData = async () => {
+      try {
+        setIsLoading(true);
+        const data = await getActivities(participants.length);
+        setActivities(data);
+      } catch (e) {
         console.error(e.message);
-      });
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchData();
   }, [participants.length, fetchAgain]);
 
-  function handleClose(participant) {
+  function handleDelete(participant) {
     setParticipants(participants.filter((p) => p !== participant));
   }
 
@@ -37,7 +40,8 @@ const Activities = ({ participants, setParticipants }) => {
       <ParticipantsList
         data={participants}
         title={"Participants"}
-        handleClose={handleClose}
+        handleDelete={handleDelete}
+        testId="participants-list"
       />
       <span className={styles.horizontal_divider} />
       <div>
@@ -45,12 +49,14 @@ const Activities = ({ participants, setParticipants }) => {
           title={"Activities"}
           data={activities}
           loading={isLoading}
+          testId="activities-list"
         />
         {!isLoading && (
           <StyledButton
             label={"I want more Activity suggestions!"}
             type="outlined"
             onClick={toggleFetchAgain}
+            testId="refetch-activities"
           />
         )}
       </div>

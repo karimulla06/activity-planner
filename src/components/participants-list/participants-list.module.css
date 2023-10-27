@@ -41,5 +41,9 @@
   cursor: pointer;
   font-size: 14px;
   padding: 5px;
-  color: #383434;
+  color: #684949;
+}
+
+.btn:hover {
+  color: rgb(170, 46, 46);
 }

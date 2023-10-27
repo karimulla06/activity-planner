@@ -15,6 +15,7 @@ const ParticipantsForm = ({ setParticipants }) => {
       ) : (
         <NumberInput
           label={"Select Number of Participants:"}
+          testId="select-number-of-participants"
           defaultValue={1}
           min={1}
           max={5}

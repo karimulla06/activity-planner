@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./text-input.module.css";
 
-const TextInput = ({ handleChange, placeholder, value, error }) => {
+const TextInput = ({ testId, handleChange, placeholder, value, error }) => {
   return (
     <div className={styles.container}>
       <div className={styles.input_container}>
@@ -11,10 +11,15 @@ const TextInput = ({ handleChange, placeholder, value, error }) => {
           onChange={handleChange}
           placeholder={placeholder}
           className={styles.text_input}
+          data-testid={testId}
         />
         <span className={styles.focus_border} />
       </div>
-      {error && <span className={styles.error}>{error}</span>}
+      {error && (
+        <span className={styles.error} data-testid={testId + "-error"}>
+          {error}
+        </span>
+      )}
     </div>
   );
 };
