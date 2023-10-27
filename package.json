@@ -1,7 +1,7 @@
 {
   "name": "activity-planner",
   "version": "0.1.0",
-  "homepage": "https://activity-planner.karimulla.in",
+  "homepage": "https://karimulla06.github.io/activity-planner/",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",
