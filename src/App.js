@@ -1,4 +1,4 @@
-import ActivityPlanner from "./containers/activity-planner";
+import ActivityPlanner from "containers/activity-planner";
 import "./App.css";
 
 function App() {

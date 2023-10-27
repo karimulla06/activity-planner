@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import ParticipantsForm from "./ParticipantsForm";
 
@@ -19,9 +19,7 @@ describe("ParticipantsForm", () => {
     const submitButton = screen.getByTestId(
       "select-number-of-participants-submit-button"
     );
-
     userEvent.click(submitButton);
-
     expect(screen.getByRole("textbox")).toBeInTheDocument();
   });
 });

@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-  ActivitiesList,
-  ParticipantsList,
-  StyledButton,
-} from "../../components";
+import { ActivitiesList, ParticipantsList, StyledButton } from "components";
 import { getActivities } from "./getActivities";
 import styles from "./activities.module.css";
 

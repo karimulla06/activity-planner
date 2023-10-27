@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Activities from "../activities";
-import ParticipantsForm from "../participants-form";
+import Activities from "containers/activities";
+import ParticipantsForm from "containers/participants-form";
 import styles from "./activity-planner.module.css";
 
 const ActivityPlanner = () => {

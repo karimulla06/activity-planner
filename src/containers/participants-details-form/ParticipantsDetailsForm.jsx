@@ -1,6 +1,6 @@
 import { useReducer } from "react";
+import { StyledButton, TextInput } from "components";
 import { ACTIONS, getInitialState, reducer } from "./store";
-import { StyledButton, TextInput } from "../../components";
 import styles from "./participants-details-form.module.css";
 
 const ParticipantsDetailsForm = ({ numberOfParticipants, setParticipants }) => {

@@ -1,10 +1,9 @@
 import { useState } from "react";
-import ParticipantsDetailsForm from "../participants-details-form";
-import { NumberInput } from "../../components";
+import { NumberInput } from "components";
+import ParticipantsDetailsForm from "containers/participants-details-form";
 
 const ParticipantsForm = ({ setParticipants }) => {
   const [numberOfParticipants, setNumberOfParticipants] = useState();
-
   return (
     <div>
       {numberOfParticipants ? (

@@ -1,4 +1,4 @@
-import { generateArray, validateInput } from "../../utils/helpers";
+import { generateArray, validateInput } from "utils/helpers";
 
 export const ACTIONS = {
   UPDATE_NAME: "UPDATE_NAME",

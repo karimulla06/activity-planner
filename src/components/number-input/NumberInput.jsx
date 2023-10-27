@@ -1,5 +1,5 @@
 import { useState } from "react";
-import StyledButton from "../styled-button/StyledButton";
+import StyledButton from "components/styled-button/StyledButton";
 import { getTestIds } from "./helpers";
 import styles from "./number-input.module.css";
 
