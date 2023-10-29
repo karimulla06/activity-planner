@@ -1,11 +1,11 @@
 import ActivityPlanner from "containers/activity-planner";
-import "./App.css";
+import { ThemeProvider } from "themes";
 
 function App() {
   return (
-    <div className="App">
+    <ThemeProvider>
       <ActivityPlanner />
-    </div>
+    </ThemeProvider>
   );
 }
 

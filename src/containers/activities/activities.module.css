@@ -18,5 +18,9 @@
 }
 
 .horizontal_divider {
-  background-color: black;
+  background-color: var(--theme-colors-primary);
+}
+
+.activities_conatiner {
+  margin-left: 20px;
 }

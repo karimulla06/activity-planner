@@ -14,10 +14,9 @@ const Activities = ({ participants, setParticipants }) => {
         setIsLoading(true);
         const data = await getActivities(participants.length);
         setActivities(data);
+        setIsLoading(false);
       } catch (e) {
         console.error(e.message);
-      } finally {
-        setIsLoading(false);
       }
     };
     fetchData();
@@ -40,7 +39,7 @@ const Activities = ({ participants, setParticipants }) => {
         testId="participants-list"
       />
       <span className={styles.horizontal_divider} />
-      <div>
+      <div className={styles.activities_conatiner}>
         <ActivitiesList
           title={"Activities"}
           data={activities}

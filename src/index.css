@@ -1,21 +1,17 @@
 html {
-  background: rgb(9, 121, 72);
+  background: var(--theme-colors-background);
 }
 
 body {
   text-align: center;
-  font-family: "Poppins", cursive;
+  font-family: var(--theme-font-family), cursive;
   font-weight: 300;
   margin: 0;
   padding: 20px;
   min-height: 100vh;
   height: 100%;
-  color: black;
-  background: linear-gradient(
-    45deg,
-    rgba(0, 131, 255, 1) 0%,
-    rgba(9, 121, 72, 1) 100%
-  );
+  color: var(--theme-colors-primary);
+  background: var(--theme-colors-background-gradient);
 }
 
 .animated_shimmer {

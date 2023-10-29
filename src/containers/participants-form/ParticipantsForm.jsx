@@ -1,9 +1,9 @@
-import { useState } from "react";
 import { NumberInput } from "components";
 import ParticipantsDetailsForm from "containers/participants-details-form";
+import { useLocalState } from "hooks";
 
 const ParticipantsForm = ({ setParticipants }) => {
-  const [numberOfParticipants, setNumberOfParticipants] = useState();
+  const [numberOfParticipants, setNumberOfParticipants] = useLocalState();
   return (
     <div>
       {numberOfParticipants ? (

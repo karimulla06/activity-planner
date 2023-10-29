@@ -12,8 +12,7 @@
 
 .button_container {
   height: 30px;
-  color: black;
-  border: 2px solid black;
+  border: 2px solid var(--theme-colors-primary);
   border-radius: 30px;
   display: flex;
   justify-content: center;
@@ -27,9 +26,11 @@
   font-size: 24px;
   cursor: pointer;
   width: 40px;
+  color: var(--theme-colors-primary);
 }
 .button_container button:disabled {
   cursor: not-allowed;
+  opacity: 0.2;
 }
 
 .button_container span {
@@ -44,7 +45,6 @@
 }
 
 .label {
-  color: black;
   font-size: 18px;
   font-weight: 400;
 }
