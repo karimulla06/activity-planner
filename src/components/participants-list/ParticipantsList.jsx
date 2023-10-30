@@ -1,11 +1,11 @@
-import styles from "./participants-list.module.css";
 import PropTypes from "prop-types";
+import styles from "./participants-list.module.css";
 
 ParticipantsList.propTypes = {
   data: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string,
-  handleDelete: PropTypes.func,
-  testId: PropTypes.string,
+  handleDelete: PropTypes.func.isRequired,
+  testId: PropTypes.string.isRequired,
 };
 
 function ParticipantsList({ data, title, handleDelete, testId }) {

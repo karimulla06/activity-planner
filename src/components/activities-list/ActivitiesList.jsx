@@ -1,5 +1,5 @@
-import styles from "./activities-list.module.css";
 import PropTypes from "prop-types";
+import styles from "./activities-list.module.css";
 
 ActivitiesList.propTypes = {
   loading: PropTypes.bool,
@@ -11,7 +11,7 @@ ActivitiesList.propTypes = {
       price: PropTypes.number,
     })
   ),
-  testId: PropTypes.string,
+  testId: PropTypes.string.isRequired,
 };
 
 function ActivitiesList({ loading, title, data = [], testId }) {

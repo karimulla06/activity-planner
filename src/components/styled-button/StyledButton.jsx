@@ -1,7 +1,15 @@
-import React from "react";
+import PropTypes from "prop-types";
 import styles from "./styled-button.module.css";
 
-const StyledButton = ({ testId, label, onClick, disabled, type }) => {
+StyledButton.propTypes = {
+  testId: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  disabled: PropTypes.bool,
+  type: PropTypes.string,
+};
+
+function StyledButton({ testId, label, onClick, disabled, type }) {
   return (
     <button
       onClick={onClick}
@@ -14,6 +22,6 @@ const StyledButton = ({ testId, label, onClick, disabled, type }) => {
       {label}
     </button>
   );
-};
+}
 
 export default StyledButton;

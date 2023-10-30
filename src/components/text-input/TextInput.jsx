@@ -1,7 +1,15 @@
-import React from "react";
+import PropTypes from "prop-types";
 import styles from "./text-input.module.css";
 
-const TextInput = ({ testId, handleChange, placeholder, value, error }) => {
+TextInput.propTypes = {
+  testId: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  error: PropTypes.string,
+};
+
+function TextInput({ testId, handleChange, placeholder, value, error }) {
   return (
     <div className={styles.container}>
       <div className={styles.input_container}>
@@ -22,6 +30,6 @@ const TextInput = ({ testId, handleChange, placeholder, value, error }) => {
       )}
     </div>
   );
-};
+}
 
 export default TextInput;

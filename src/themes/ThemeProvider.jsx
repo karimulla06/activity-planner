@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
 import { ThemeSwitch } from "components";
 import { THEMES } from "content/constants";
 import lightTheme from "./lightTheme";
@@ -13,14 +13,14 @@ const themesData = {
 };
 
 const ThemeProvider = ({ children }) => {
-  const [currentTheme, setCurrentTheme] = React.useState(THEMES.LIGHT);
+  const [currentTheme, setCurrentTheme] = useState(THEMES.LIGHT);
 
   function toggleTheme() {
     setCurrentTheme((t) => (t === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT));
   }
 
   // Loop though current theme and set the css variables from the values defined in theme
-  React.useEffect(() => {
+  useEffect(() => {
     const cssVariables = getCssVariables(themesData[currentTheme]);
     document.documentElement.setAttribute("style", cssVariables);
   }, [currentTheme]);

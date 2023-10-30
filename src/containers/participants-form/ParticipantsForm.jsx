@@ -1,7 +1,8 @@
+import { useEffect } from "react";
+import { useLocalState } from "hooks";
 import { NumberInput } from "components";
 import ParticipantsDetailsForm from "containers/participants-details-form";
-import { useLocalState } from "hooks";
-import { useEffect } from "react";
+import { translationKeys } from "content/translationKeys";
 
 const ParticipantsForm = ({ setParticipants }) => {
   const [numberOfParticipants, setNumberOfParticipants] = useLocalState(
@@ -22,7 +23,7 @@ const ParticipantsForm = ({ setParticipants }) => {
         />
       ) : (
         <NumberInput
-          label={"Select Number of Participants:"}
+          label={translationKeys.select_number_of_participants}
           testId="select-number-of-participants"
           defaultValue={1}
           min={1}

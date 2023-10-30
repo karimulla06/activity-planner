@@ -1,11 +1,12 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import StyledButton from "components/styled-button/StyledButton";
 import { getTestIds } from "./helpers";
+import { translationKeys } from "content/translationKeys";
 import styles from "./number-input.module.css";
-import PropTypes from "prop-types";
 
 NumberInput.propTypes = {
-  testId: PropTypes.string,
+  testId: PropTypes.string.isRequired,
   label: PropTypes.string,
   defaultValue: PropTypes.number,
   min: PropTypes.number,
@@ -64,7 +65,7 @@ function NumberInput({
       {handleSubmit && (
         <StyledButton
           onClick={handleSubmitClick}
-          label={"Submit"}
+          label={translationKeys.submit}
           testId={testIds.submitButton}
         />
       )}

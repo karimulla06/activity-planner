@@ -4,6 +4,15 @@
   grid-template-columns: 1fr 1px 3fr;
   width: 750px;
 }
+
+.activities_conatiner {
+  margin-left: 20px;
+}
+
+.buttons_conatiner {
+  display: flex;
+  justify-content: space-between;
+}
 /* medium screens */
 @media screen and (max-width: 750px) {
   .container {
@@ -15,12 +24,15 @@
   .container {
     grid-template-columns: 1fr;
   }
+  .activities_conatiner {
+    margin-left: 0;
+  }
+  .buttons_conatiner {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 .horizontal_divider {
   background-color: var(--theme-colors-primary);
-}
-
-.activities_conatiner {
-  margin-left: 20px;
 }

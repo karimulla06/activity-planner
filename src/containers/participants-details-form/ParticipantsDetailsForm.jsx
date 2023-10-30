@@ -1,9 +1,16 @@
 import { useReducer } from "react";
+import PropTypes from "prop-types";
 import { StyledButton, TextInput } from "components";
 import { ACTIONS, getInitialState, reducer } from "./store";
+import { translationKeys } from "content/translationKeys";
 import styles from "./participants-details-form.module.css";
 
-const ParticipantsDetailsForm = ({ numberOfParticipants, setParticipants }) => {
+ParticipantsDetailsForm.propTypes = {
+  numberOfParticipants: PropTypes.number.isRequired,
+  setParticipants: PropTypes.func.isRequired,
+};
+
+function ParticipantsDetailsForm({ numberOfParticipants, setParticipants }) {
   const [{ participantsDetails, isSubmitDisabled }, dispatch] = useReducer(
     reducer,
     getInitialState(numberOfParticipants)
@@ -26,13 +33,14 @@ const ParticipantsDetailsForm = ({ numberOfParticipants, setParticipants }) => {
   return (
     <div className={styles.container}>
       <p>
-        No. of Participants: <strong>{numberOfParticipants}</strong>
+        {translationKeys.number_of_participants}
+        <strong>{numberOfParticipants}</strong>
       </p>
       <div className={styles.inputs_container}>
         {Object.keys(participantsDetails).map((key) => (
           <TextInput
             key={key}
-            placeholder={"Participant " + key}
+            placeholder={translationKeys.participant + key}
             value={participantsDetails[key].name}
             handleChange={(e) => handleInputChange(e, key)}
             error={participantsDetails[key].error}
@@ -41,13 +49,13 @@ const ParticipantsDetailsForm = ({ numberOfParticipants, setParticipants }) => {
       </div>
       <div className={styles.submit_btn}>
         <StyledButton
-          label={"Submit"}
+          label={translationKeys.submit}
           disabled={isSubmitDisabled}
           onClick={handleSubmit}
         />
       </div>
     </div>
   );
-};
+}
 
 export default ParticipantsDetailsForm;
