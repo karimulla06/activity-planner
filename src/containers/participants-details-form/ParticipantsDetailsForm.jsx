@@ -44,6 +44,7 @@ function ParticipantsDetailsForm({ numberOfParticipants, setParticipants }) {
             value={participantsDetails[key].name}
             handleChange={(e) => handleInputChange(e, key)}
             error={participantsDetails[key].error}
+            testId={"particiapant-" + key}
           />
         ))}
       </div>
@@ -52,6 +53,7 @@ function ParticipantsDetailsForm({ numberOfParticipants, setParticipants }) {
           label={translationKeys.submit}
           disabled={isSubmitDisabled}
           onClick={handleSubmit}
+          testId="submit-participant-details"
         />
       </div>
     </div>

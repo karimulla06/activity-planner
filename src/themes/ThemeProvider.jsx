@@ -1,9 +1,10 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect } from "react";
 import { ThemeSwitch } from "components";
 import { THEMES } from "content/constants";
 import lightTheme from "./lightTheme";
 import darkTheme from "./darkTheme";
 import { getCssVariables } from "./helpers";
+import { useLocalState } from "hooks";
 
 export const ThemeContext = createContext();
 
@@ -13,7 +14,10 @@ const themesData = {
 };
 
 const ThemeProvider = ({ children }) => {
-  const [currentTheme, setCurrentTheme] = useState(THEMES.LIGHT);
+  const [currentTheme, setCurrentTheme] = useLocalState(
+    "currentTheme",
+    THEMES.LIGHT
+  );
 
   function toggleTheme() {
     setCurrentTheme((t) => (t === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT));
