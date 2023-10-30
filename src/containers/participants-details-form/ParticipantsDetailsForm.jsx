@@ -7,10 +7,15 @@ import styles from "./participants-details-form.module.css";
 
 ParticipantsDetailsForm.propTypes = {
   numberOfParticipants: PropTypes.number.isRequired,
+  handleCancel: PropTypes.func.isRequired,
   setParticipants: PropTypes.func.isRequired,
 };
 
-function ParticipantsDetailsForm({ numberOfParticipants, setParticipants }) {
+function ParticipantsDetailsForm({
+  numberOfParticipants,
+  handleCancel,
+  setParticipants,
+}) {
   const [{ participantsDetails, isSubmitDisabled }, dispatch] = useReducer(
     reducer,
     getInitialState(numberOfParticipants)
@@ -48,12 +53,18 @@ function ParticipantsDetailsForm({ numberOfParticipants, setParticipants }) {
           />
         ))}
       </div>
-      <div className={styles.submit_btn}>
+      <div className={styles.submit_btn_container}>
         <StyledButton
           label={translationKeys.submit}
           disabled={isSubmitDisabled}
           onClick={handleSubmit}
-          testId="submit-participant-details"
+          testId="participant-details-submit-button"
+        />
+        <StyledButton
+          label={translationKeys.cancel}
+          onClick={handleCancel}
+          testId="participant-details-cancel-button"
+          type="outlined"
         />
       </div>
     </div>

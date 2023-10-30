@@ -3,6 +3,7 @@ export const translationKeys = {
   select_number_of_participants: "Select Number of Participants:  ",
   number_of_participants: "No. of Participants: ",
   submit: "Submit",
+  cancel: "Cancel",
   participant: "Participant ",
   participants: "Participants",
   activities: "Activities",

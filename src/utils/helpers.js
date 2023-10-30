@@ -13,7 +13,7 @@ const isDuplicate = (name, key, details) =>
 // fucntion to validate input
 export function validateInput(name, key, details) {
   let error = "";
-  if (name.length === 0) {
+  if (name.trim().length === 0) {
     error = "Name is required.";
   } else if (name.length > 20) {
     error = "Name exceeds 20 characters limit.";

@@ -9,10 +9,13 @@
   text-align: start;
 }
 
-.submit_btn {
+.submit_btn_container {
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.submit_btn button {
+.submit_btn_container button {
   width: 100%;
 }

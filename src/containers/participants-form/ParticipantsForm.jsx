@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useLocalState } from "hooks";
 import { NumberInput } from "components";
 import ParticipantsDetailsForm from "containers/participants-details-form";
@@ -6,19 +5,20 @@ import { translationKeys } from "content/translationKeys";
 
 const ParticipantsForm = ({ setParticipants }) => {
   const [numberOfParticipants, setNumberOfParticipants] = useLocalState(
-    "numberOfParticipants"
+    "numberOfParticipants",
+    null
   );
-  useEffect(() => {
-    return () => {
-      localStorage.removeItem("numberOfParticipants");
-    };
-  });
+
+  function handleCancel() {
+    setNumberOfParticipants(null);
+  }
 
   return (
     <div>
       {numberOfParticipants ? (
         <ParticipantsDetailsForm
           numberOfParticipants={numberOfParticipants}
+          handleCancel={handleCancel}
           setParticipants={setParticipants}
         />
       ) : (
