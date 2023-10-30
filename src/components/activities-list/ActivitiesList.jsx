@@ -1,6 +1,20 @@
 import styles from "./activities-list.module.css";
+import PropTypes from "prop-types";
 
-const ActivitiesList = ({ loading, title, data = [], testId }) => {
+ActivitiesList.propTypes = {
+  loading: PropTypes.bool,
+  title: PropTypes.string,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.string,
+      activity: PropTypes.string,
+      price: PropTypes.number,
+    })
+  ),
+  testId: PropTypes.string,
+};
+
+function ActivitiesList({ loading, title, data = [], testId }) {
   return (
     <div className={styles.conatiner} data-testid={testId}>
       {title && (
@@ -26,6 +40,6 @@ const ActivitiesList = ({ loading, title, data = [], testId }) => {
       )}
     </div>
   );
-};
+}
 
 export default ActivitiesList;

@@ -1,9 +1,18 @@
 import { NumberInput } from "components";
 import ParticipantsDetailsForm from "containers/participants-details-form";
 import { useLocalState } from "hooks";
+import { useEffect } from "react";
 
 const ParticipantsForm = ({ setParticipants }) => {
-  const [numberOfParticipants, setNumberOfParticipants] = useLocalState();
+  const [numberOfParticipants, setNumberOfParticipants] = useLocalState(
+    "numberOfParticipants"
+  );
+  useEffect(() => {
+    return () => {
+      localStorage.removeItem("numberOfParticipants");
+    };
+  });
+
   return (
     <div>
       {numberOfParticipants ? (

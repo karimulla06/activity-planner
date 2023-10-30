@@ -15,7 +15,7 @@
   padding: 10px 0;
   border: 0;
   margin: 0;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--theme-colors-primary);
   background: transparent;
   text-decoration: none;
   box-sizing: border-box;
@@ -48,7 +48,7 @@
 }
 
 .error {
-  font-size: 12px;
+  font-size: var(--theme-font-size-helper-text);
   color: rgb(197, 27, 27);
   font-weight: 400;
   margin-top: 5px;

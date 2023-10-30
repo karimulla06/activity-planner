@@ -20,7 +20,7 @@
 }
 
 .title {
-  font-size: 18px;
+  font-size: var(--theme-font-size-title);
   font-weight: bold;
   margin-bottom: 0;
 }
@@ -40,11 +40,11 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  font-size: 14px;
+  font-size: var(--theme-font-size-text);
   padding: 5px;
-  color: #684949;
+  color: var(--theme-colors-warning);
 }
 
 .btn:hover {
-  color: rgb(170, 46, 46);
+  color: var(--theme-colors-danger);
 }

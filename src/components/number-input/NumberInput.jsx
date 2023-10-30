@@ -2,15 +2,25 @@ import { useState } from "react";
 import StyledButton from "components/styled-button/StyledButton";
 import { getTestIds } from "./helpers";
 import styles from "./number-input.module.css";
+import PropTypes from "prop-types";
 
-const NumberInput = ({
+NumberInput.propTypes = {
+  testId: PropTypes.string,
+  label: PropTypes.string,
+  defaultValue: PropTypes.number,
+  min: PropTypes.number,
+  max: PropTypes.number,
+  handleSubmit: PropTypes.func,
+};
+
+function NumberInput({
   testId,
   label,
   defaultValue = 1,
   min,
   max,
   handleSubmit,
-}) => {
+}) {
   const [inputValue, setInputValue] = useState(defaultValue);
 
   function handleIncrement() {
@@ -60,5 +70,5 @@ const NumberInput = ({
       )}
     </div>
   );
-};
+}
 export default NumberInput;

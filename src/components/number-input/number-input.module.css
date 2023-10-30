@@ -23,7 +23,7 @@
   background-color: transparent;
   border: none;
   text-decoration: none;
-  font-size: 24px;
+  font-size: var(--theme-font-size-number);
   cursor: pointer;
   width: 40px;
   color: var(--theme-colors-primary);
@@ -37,14 +37,7 @@
   font-weight: bold;
 }
 
-.submit_btn {
-  background: dodgerblue;
-  border: none;
-  border-radius: 2px;
-  padding: 0 20px;
-}
-
 .label {
-  font-size: 18px;
+  font-size: var(--theme-font-size-title);
   font-weight: 400;
 }

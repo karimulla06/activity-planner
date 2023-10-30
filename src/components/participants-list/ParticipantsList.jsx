@@ -1,6 +1,14 @@
 import styles from "./participants-list.module.css";
+import PropTypes from "prop-types";
 
-const ParticipantsList = ({ data, title, handleDelete, testId }) => {
+ParticipantsList.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.string),
+  title: PropTypes.string,
+  handleDelete: PropTypes.func,
+  testId: PropTypes.string,
+};
+
+function ParticipantsList({ data, title, handleDelete, testId }) {
   return (
     <div className={styles.container}>
       {title && (
@@ -26,6 +34,6 @@ const ParticipantsList = ({ data, title, handleDelete, testId }) => {
       </div>
     </div>
   );
-};
+}
 
 export default ParticipantsList;
