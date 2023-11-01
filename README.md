@@ -1,6 +1,8 @@
 # Activity Planner App
 
-`ToDo:` update a short description about Activity Planner App
+Activity Planner is a React-based application designed to help users plan activities based on the number of participants. It utilizes the Bored API to fetch activity suggestions for the given number of participants. The application allows users to input participant names, fetch activities, and display them in ascending order based on price.
+
+Live app is deployed on: https://karimulla06.github.io/activity-planner/
 
 ## Problem Statement
 
@@ -19,3 +21,16 @@ Display the name of participants and list of activities sorted in ascending orde
 ## App Demo
 
 https://github.com/karimulla06/activity-planner/assets/44303392/8cb8c10c-14e5-4cc4-bf35-d2d94fac8f4f
+
+## Additional Feature Implemented
+
+In addition to the core requirements outlined in the problem statement, the application incorporates the following advanced features:
+
+1. **Custom Theming**: Implemented a dynamic theming system, allowing users to seamlessly switch between Light and Dark themes based on their preference.
+2. **Data Persistence with Local Storage**: Leveraged local storage to ensure seamless data persistence, enabling users to retain their data even when reloading or reopening the application.
+3. **Dynamic API Fetching**: Integrated a feature to fetch additional activity suggestions if the initial set of suggestions does not meet the user's requirements, enhancing the overall user experience.
+4. **Application Reset Functionality**: Included a reset functionality that allows users to reset the application state entirely, providing a seamless way to start fresh.
+5. **Individual Data Management**: Developed a feature to facilitate the removal of individual participants from the Participants list, triggering the automatic retrieval of activities for the remaining participants, ensuring a smooth user interaction.
+6. **Comprehensive Unit Testing with React Testing Library**: Written an extensive suite of unit tests using the React Testing Library, achieving a test coverage of `100%` for each file, ensuring robustness and reliability of the application.
+
+   ![Unit Tests Coverage Report](https://github.com/karimulla06/activity-planner/assets/44303392/d45cf33b-38c3-426f-80b7-928cfa6febf6)
