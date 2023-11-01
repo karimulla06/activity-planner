@@ -4,9 +4,9 @@ import ActivitiesList from "./ActivitiesList";
 describe("ActivitiesList Component", () => {
   const testId = "test";
   const data = [
-    { key: 1, activity: "Hiking", price: 50 },
-    { key: 2, activity: "Skiing", price: 100 },
-    { key: 3, activity: "Swimming", price: 30 },
+    { key: "1", activity: "Hiking", price: 50 },
+    { key: "2", activity: "Skiing", price: 100 },
+    { key: "3", activity: "Swimming", price: 30 },
   ];
 
   it("renders title correctly", () => {

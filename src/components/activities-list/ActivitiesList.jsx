@@ -11,7 +11,7 @@ ActivitiesList.propTypes = {
       price: PropTypes.number,
     })
   ),
-  testId: PropTypes.string.isRequired,
+  testId: PropTypes.string,
 };
 
 function ActivitiesList({ loading, title, data = [], testId }) {

@@ -6,7 +6,7 @@ import { translationKeys } from "content/translationKeys";
 import styles from "./number-input.module.css";
 
 NumberInput.propTypes = {
-  testId: PropTypes.string.isRequired,
+  testId: PropTypes.string,
   label: PropTypes.string,
   defaultValue: PropTypes.number,
   min: PropTypes.number,
@@ -37,7 +37,6 @@ function NumberInput({
   }
 
   const testIds = getTestIds(testId);
-
   return (
     <div className={styles.input_container} data-testid={testIds.container}>
       {label && (

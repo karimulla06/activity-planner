@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 import styles from "./styled-button.module.css";
 
 StyledButton.propTypes = {
-  testId: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  testId: PropTypes.string,
+  label: PropTypes.string,
+  onClick: PropTypes.func,
   disabled: PropTypes.bool,
   type: PropTypes.string,
 };

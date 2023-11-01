@@ -6,15 +6,15 @@ import { translationKeys } from "content/translationKeys";
 import styles from "./participants-details-form.module.css";
 
 ParticipantsDetailsForm.propTypes = {
-  numberOfParticipants: PropTypes.number.isRequired,
-  handleCancel: PropTypes.func.isRequired,
-  setParticipants: PropTypes.func.isRequired,
+  numberOfParticipants: PropTypes.number,
+  handleCancel: PropTypes.func,
+  saveParticipantsDetails: PropTypes.func,
 };
 
 function ParticipantsDetailsForm({
   numberOfParticipants,
   handleCancel,
-  setParticipants,
+  saveParticipantsDetails,
 }) {
   const [{ participantsDetails, isSubmitDisabled }, dispatch] = useReducer(
     reducer,
@@ -33,7 +33,7 @@ function ParticipantsDetailsForm({
     const participantsArr = Object.values(participantsDetails).map(
       (p) => p.name
     );
-    setParticipants(participantsArr);
+    saveParticipantsDetails(participantsArr);
   }
   return (
     <div className={styles.container}>

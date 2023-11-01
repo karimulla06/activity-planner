@@ -2,10 +2,10 @@ import PropTypes from "prop-types";
 import styles from "./text-input.module.css";
 
 TextInput.propTypes = {
-  testId: PropTypes.string.isRequired,
-  handleChange: PropTypes.func.isRequired,
-  placeholder: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  testId: PropTypes.string,
+  handleChange: PropTypes.func,
+  placeholder: PropTypes.string,
+  value: PropTypes.string,
   error: PropTypes.string,
 };
 

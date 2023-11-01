@@ -11,20 +11,25 @@ jest.mock("./getActivities", () => ({
 }));
 
 describe("Activities component", () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
   const mockParticipants = ["Participant1", "Participant2"];
-  const mockSetParticipants = jest.fn();
+  const mockHandleCancel = jest.fn();
+  const mockRemoveParticipant = jest.fn();
+
+  const props = {
+    participants: mockParticipants,
+    handleCancel: mockHandleCancel,
+    removeParticipant: mockRemoveParticipant,
+  };
 
   afterAll(() => {
     jest.clearAllMocks();
   });
 
   it("renders ParticipantsList and ActivitiesList", async () => {
-    render(
-      <Activities
-        participants={mockParticipants}
-        setParticipants={mockSetParticipants}
-      />
-    );
+    render(<Activities {...props} />);
     const participantsTitle = await screen.findByText("Participants");
     const activitiesTitle = await screen.findByText("Activities");
 
@@ -33,28 +38,18 @@ describe("Activities component", () => {
   });
 
   it("handles participant deletion", async () => {
-    render(
-      <Activities
-        participants={mockParticipants}
-        setParticipants={mockSetParticipants}
-      />
-    );
+    render(<Activities {...props} />);
     const deleteButton = await screen.findByTestId(
       "participants-list-participant-1-delete-button"
     );
     userEvent.click(deleteButton);
 
-    expect(mockSetParticipants).toHaveBeenCalledWith(["Participant2"]);
+    expect(mockRemoveParticipant).toHaveBeenCalledWith("Participant1");
   });
 
   it("toggles fetching activities", async () => {
-    render(
-      <Activities
-        participants={mockParticipants}
-        setParticipants={mockSetParticipants}
-      />
-    );
-    const toggleButton = await screen.findByTestId("refetch-activities");
+    render(<Activities {...props} />);
+    const toggleButton = await screen.findByTestId("refetch-activities-more");
     expect(toggleButton).toBeInTheDocument();
 
     userEvent.click(toggleButton);
@@ -70,12 +65,7 @@ describe("Activities component", () => {
     });
 
     console.error = jest.fn();
-    render(
-      <Activities
-        participants={mockParticipants}
-        setParticipants={mockSetParticipants}
-      />
-    );
+    render(<Activities {...props} />);
 
     await waitFor(() => {
       expect(console.error).toHaveBeenCalledWith(mockError.message);

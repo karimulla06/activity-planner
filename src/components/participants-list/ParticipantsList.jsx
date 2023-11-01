@@ -4,8 +4,8 @@ import styles from "./participants-list.module.css";
 ParticipantsList.propTypes = {
   data: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string,
-  handleDelete: PropTypes.func.isRequired,
-  testId: PropTypes.string.isRequired,
+  handleDelete: PropTypes.func,
+  testId: PropTypes.string,
 };
 
 function ParticipantsList({ data, title, handleDelete, testId }) {

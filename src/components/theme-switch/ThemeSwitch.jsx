@@ -4,7 +4,7 @@ import { THEMES } from "content/constants";
 import styles from "./theme-switch.module.css";
 
 ThemeSwitch.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 };
 
 function ThemeSwitch({ onClick }) {

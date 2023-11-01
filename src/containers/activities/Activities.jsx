@@ -6,11 +6,12 @@ import { translationKeys } from "content/translationKeys";
 import styles from "./activities.module.css";
 
 Activities.propTypes = {
-  participants: PropTypes.array.isRequired,
-  setParticipants: PropTypes.func.isRequired,
+  participants: PropTypes.array,
+  handleCancel: PropTypes.func,
+  removeParticipant: PropTypes.func,
 };
 
-function Activities({ participants, setParticipants }) {
+function Activities({ participants, handleCancel, removeParticipant }) {
   const [activities, setActivities] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [fetchAgain, setFetchAgain] = useState(false);
@@ -29,10 +30,6 @@ function Activities({ participants, setParticipants }) {
     fetchData();
   }, [participants.length, fetchAgain]);
 
-  function handleDelete(participant) {
-    setParticipants(participants.filter((p) => p !== participant));
-  }
-
   function toggleFetchAgain() {
     setFetchAgain((f) => !f);
   }
@@ -42,7 +39,7 @@ function Activities({ participants, setParticipants }) {
       <ParticipantsList
         data={participants}
         title={translationKeys.participants}
-        handleDelete={handleDelete}
+        handleDelete={removeParticipant}
         testId="participants-list"
       />
       <span className={styles.horizontal_divider} />
@@ -58,14 +55,14 @@ function Activities({ participants, setParticipants }) {
             <StyledButton
               label={translationKeys.restart}
               type="outlined"
-              onClick={() => setParticipants([])}
-              testId="refetch-activities"
+              onClick={handleCancel}
+              testId="refetch-activities-restart"
             />
             <StyledButton
               label={translationKeys.more_suggestions}
               type="outlined"
               onClick={toggleFetchAgain}
-              testId="refetch-activities"
+              testId="refetch-activities-more"
             />
           </div>
         )}
