@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+# Activity Planner App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+`ToDo:` update a short description about Activity Planner App
 
-## Available Scripts
+## Problem Statement
 
-In the project directory, you can run:
+Create an activity planner application using Reactjs.
 
-### `npm start`
+The first screen should take the number of participants (maximum is 5) as input and load input boxes for the user to enter the participant names.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The submit button should be enabled only if all the input boxes have values. Add validations to ensure that the input fields have a character limit of 20 and only letters are entered (no numbers or special characters except space should be allowed).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+On click of submit, fetch the available activities based on the number of participants by calling this API: https://www.boredapi.com/api/activity?participants={no_of \_participants}. Call this API until either a duplicate activity is received in the response or you get 5 unique activities.
 
-### `npm test`
+Display the name of participants and list of activities sorted in ascending order based on price.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![basic mockup of activity planner app](https://github.com/karimulla06/activity-planner/assets/44303392/356bdf2c-850b-48d9-b71c-391091252702)
 
-### `npm run build`
+## App Demo
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://github.com/karimulla06/activity-planner/assets/44303392/8cb8c10c-14e5-4cc4-bf35-d2d94fac8f4f
