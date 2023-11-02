@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/activity-planner/static/css/main.ec3fcec1.css",
-    "main.js": "/activity-planner/static/js/main.17ce57a5.js",
+    "main.js": "/activity-planner/static/js/main.f5375581.js",
     "index.html": "/activity-planner/index.html",
     "main.ec3fcec1.css.map": "/activity-planner/static/css/main.ec3fcec1.css.map",
-    "main.17ce57a5.js.map": "/activity-planner/static/js/main.17ce57a5.js.map"
+    "main.f5375581.js.map": "/activity-planner/static/js/main.f5375581.js.map"
   },
   "entrypoints": [
     "static/css/main.ec3fcec1.css",
-    "static/js/main.17ce57a5.js"
+    "static/js/main.f5375581.js"
   ]
 }
