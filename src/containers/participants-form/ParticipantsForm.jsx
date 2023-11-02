@@ -17,7 +17,7 @@ function ParticipantsForm({
   handleCancel,
 }) {
   return (
-    <div>
+    <>
       {numberOfParticipants ? (
         <ParticipantsDetailsForm
           numberOfParticipants={numberOfParticipants}
@@ -34,7 +34,7 @@ function ParticipantsForm({
           handleSubmit={saveNumberOfParticipants}
         />
       )}
-    </div>
+    </>
   );
 }
 
