@@ -12,7 +12,7 @@ The first screen should take the number of participants (maximum is 5) as input 
 
 The submit button should be enabled only if all the input boxes have values. Add validations to ensure that the input fields have a character limit of 20 and only letters are entered (no numbers or special characters except space should be allowed).
 
-On click of submit, fetch the available activities based on the number of participants by calling this API: https://www.boredapi.com/api/activity?participants={no_of \_participants}. Call this API until either a duplicate activity is received in the response or you get 5 unique activities.
+On click of submit, fetch the available activities based on the number of participants by calling this API: https://www.boredapi.com/api/activity?participants={no_of_participants}. Call this API until either a duplicate activity is received in the response or you get 5 unique activities.
 
 Display the name of participants and list of activities sorted in ascending order based on price.
 
