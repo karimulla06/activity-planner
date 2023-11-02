@@ -2,27 +2,26 @@ import PropTypes from "prop-types";
 import { NumberInput } from "components";
 import ParticipantsDetailsForm from "containers/participants-details-form";
 import { translationKeys } from "content/translationKeys";
+import { useLocalState } from "hooks";
 
-ParticipantsDetailsForm.propTypes = {
-  numberOfParticipants: PropTypes.number,
-  saveNumberOfParticipants: PropTypes.func,
-  saveParticipantsDetails: PropTypes.func,
-  handleCancel: PropTypes.func,
+ParticipantsForm.propTypes = {
+  setParticipants: PropTypes.func.isRequired,
 };
 
-function ParticipantsForm({
-  numberOfParticipants,
-  saveNumberOfParticipants,
-  saveParticipantsDetails,
-  handleCancel,
-}) {
+function ParticipantsForm({ setParticipants }) {
+  const [numberOfParticipants, setNumberOfParticipants] = useLocalState(
+    "numberOfParticipants",
+    0,
+    true
+  );
+
   return (
     <>
       {numberOfParticipants ? (
         <ParticipantsDetailsForm
           numberOfParticipants={numberOfParticipants}
-          handleCancel={handleCancel}
-          saveParticipantsDetails={saveParticipantsDetails}
+          handleCancel={() => setParticipants([])}
+          saveParticipantsDetails={(data) => setParticipants(data)}
         />
       ) : (
         <NumberInput
@@ -31,7 +30,7 @@ function ParticipantsForm({
           defaultValue={1}
           min={1}
           max={5}
-          handleSubmit={saveNumberOfParticipants}
+          handleSubmit={setNumberOfParticipants}
         />
       )}
     </>

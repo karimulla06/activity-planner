@@ -1,75 +1,36 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import ActivityPlanner from "./ActivityPlanner";
+import { translationKeys } from "content/translationKeys";
 
 jest.mock("containers/participants-form", () => ({
   __esModule: true,
-  default: ({
-    saveNumberOfParticipants,
-    saveParticipantsDetails,
-    handleCancel,
-  }) => (
+  default: ({ setParticipants }) => (
     <div>
-      <p> Participants Form</p>
-      <button
-        data-testid="save-number-of-participants"
-        onClick={() => saveNumberOfParticipants(2)}
-      >
-        Save Number Of Participants
-      </button>
-      <button
-        data-testid="save-participants-details"
-        onClick={() => saveParticipantsDetails(["Jhon", "Jane"])}
-      >
-        Save Participants Details
-      </button>
-      <button
-        data-testid="cancel-participants-form"
-        onClick={() => handleCancel()}
-      >
-        Cancel
-      </button>
+      <p>Participants Form</p>
+      <button onClick={() => setParticipants(["Jhon"])}>Submit</button>
     </div>
   ),
 }));
 
 jest.mock("containers/activities", () => ({
   __esModule: true,
-  default: ({ removeParticipant, participants }) => (
-    <div>
-      <p>Activities List</p>
-
-      {participants.map((p) => (
-        <button key={p} onClick={() => removeParticipant(p)}>
-          {p}
-        </button>
-      ))}
-    </div>
-  ),
+  default: () => <p>Activities List</p>,
 }));
 
 describe("ActivityPlanner Component", () => {
-  it("renders Participants form and Activities List", async () => {
+  it("renders Participants form and then Activities List on submit", async () => {
     render(<ActivityPlanner />);
-    const title = screen.getByText("Activity Planner");
+    const title = screen.getByText(translationKeys.activity_planner);
     expect(title).toBeInTheDocument();
 
-    const saveNumberOfParticipantsButton = screen.getByTestId(
-      "save-number-of-participants"
-    );
-    userEvent.click(saveNumberOfParticipantsButton);
+    const participantsForm = screen.getByText("Participants Form");
+    expect(participantsForm).toBeInTheDocument();
 
-    const saveParticipantsButton = screen.getByTestId(
-      "save-participants-details"
-    );
-    userEvent.click(saveParticipantsButton);
+    const saveButton = screen.getByRole("button", { name: "Submit" });
+    userEvent.click(saveButton);
 
     const activitiesList = await screen.findByText("Activities List");
     expect(activitiesList).toBeInTheDocument();
-
-    userEvent.click(screen.getByRole("button", { name: "Jhon" }));
-    userEvent.click(screen.getByRole("button", { name: "Jane" }));
-    const participantsForm = await screen.findByText("Participants Form");
-    expect(participantsForm).toBeInTheDocument();
   });
 });

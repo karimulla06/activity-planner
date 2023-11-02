@@ -7,11 +7,10 @@ import styles from "./activities.module.css";
 
 Activities.propTypes = {
   participants: PropTypes.array,
-  handleCancel: PropTypes.func,
-  removeParticipant: PropTypes.func,
+  setParticipants: PropTypes.func,
 };
 
-function Activities({ participants, handleCancel, removeParticipant }) {
+function Activities({ participants, setParticipants }) {
   const [activities, setActivities] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [fetchAgain, setFetchAgain] = useState(false);
@@ -32,6 +31,19 @@ function Activities({ participants, handleCancel, removeParticipant }) {
 
   function toggleFetchAgain() {
     setFetchAgain((f) => !f);
+  }
+
+  function handleRestart() {
+    setParticipants([]);
+  }
+
+  function removeParticipant(name) {
+    const filteredList = participants.filter((p) => p !== name);
+    if (filteredList.length === 0) {
+      handleRestart();
+    } else {
+      setParticipants(filteredList);
+    }
   }
 
   return (
@@ -55,7 +67,7 @@ function Activities({ participants, handleCancel, removeParticipant }) {
             <StyledButton
               label={translationKeys.restart}
               type="outlined"
-              onClick={handleCancel}
+              onClick={handleRestart}
               testId="refetch-activities-restart"
             />
             <StyledButton

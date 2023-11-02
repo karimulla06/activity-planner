@@ -43,4 +43,18 @@ describe("useLocalState hook", () => {
       JSON.stringify("updatedValue")
     );
   });
+
+  it("clears localStorage when component is unmounted if clearOnUnMount is true", () => {
+    const { result, unmount } = renderHook(() =>
+      useLocalState("testKey", "initialValue", true)
+    );
+    act(() => {
+      result.current[1]("updatedValue");
+    });
+    expect(localStorage.getItem("testKey")).toBe(
+      JSON.stringify("updatedValue")
+    );
+    unmount();
+    expect(localStorage.getItem("testKey")).toBeNull();
+  });
 });

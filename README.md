@@ -33,7 +33,7 @@ In addition to the core requirements outlined in the problem statement, the appl
 5. **Individual Data Management**: Developed a feature to facilitate the removal of individual participants from the Participants list, triggering the automatic retrieval of activities for the remaining participants, ensuring a smooth user interaction.
 6. **Comprehensive Unit Testing with React Testing Library**: Written an extensive suite of unit tests using the React Testing Library, achieving a test coverage of `100%` for each file, ensuring robustness and reliability of the application.
 
-   ![Unit Tests Coverage Report](https://github.com/karimulla06/activity-planner/assets/44303392/d45cf33b-38c3-426f-80b7-928cfa6febf6)
+   ![Unit Tests Coverage Report](https://github.com/karimulla06/activity-planner/assets/44303392/34b10e03-89cb-43eb-ad1e-c2f933eca2f9)
 
 7. **Responsive Design for Mobile Devices**: Ensured that the application is fully responsive, providing optimal user experience and functionality across various mobile devices, guaranteeing accessibility and ease of use.
    ![Screenshots from Mobile](https://github.com/karimulla06/activity-planner/assets/44303392/366b9c40-ada8-4f52-99f9-a0f698a54048)

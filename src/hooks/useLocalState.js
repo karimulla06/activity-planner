@@ -13,14 +13,20 @@ function getValueFromLocalStorage(key, initialValue) {
   return initialValue;
 }
 
-const useLocalState = (key, initialValue) => {
+const useLocalState = (key, initialValue, clearOnUnMount) => {
   const [state, setState] = useState(() =>
     getValueFromLocalStorage(key, initialValue)
   );
 
   useEffect(() => {
     localStorage.setItem(key, JSON.stringify(state));
-  }, [key, state]);
+
+    return () => {
+      if (clearOnUnMount) {
+        localStorage.removeItem(key);
+      }
+    };
+  }, [key, state, clearOnUnMount]);
 
   return [state, setState];
 };
