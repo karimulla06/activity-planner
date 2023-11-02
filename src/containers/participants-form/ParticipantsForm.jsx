@@ -15,12 +15,17 @@ function ParticipantsForm({ setParticipants }) {
     true
   );
 
+  const handleCancel = () => {
+    setNumberOfParticipants(0);
+    setParticipants([]);
+  };
+
   return (
     <>
       {numberOfParticipants ? (
         <ParticipantsDetailsForm
           numberOfParticipants={numberOfParticipants}
-          handleCancel={() => setParticipants([])}
+          handleCancel={handleCancel}
           saveParticipantsDetails={(data) => setParticipants(data)}
         />
       ) : (

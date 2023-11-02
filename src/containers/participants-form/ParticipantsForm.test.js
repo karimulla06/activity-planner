@@ -36,12 +36,12 @@ describe("ParticipantsForm Component", () => {
     userEvent.click(submitButton);
     expect(screen.getByText("Participants Details Form")).toBeInTheDocument();
 
-    const cancelButton = screen.getByRole("button", { name: "Cancel" });
-    userEvent.click(cancelButton);
-    expect(mockSetParticipants).toHaveBeenCalledWith([]);
-
     const saveButton = screen.getByRole("button", { name: "Save" });
     userEvent.click(saveButton);
     expect(mockSetParticipants).toHaveBeenCalledWith(["p1", "p2"]);
+
+    const cancelButton = screen.getByRole("button", { name: "Cancel" });
+    userEvent.click(cancelButton);
+    expect(mockSetParticipants).toHaveBeenCalledWith([]);
   });
 });
